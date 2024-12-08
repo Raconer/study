@@ -1,0 +1,32 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/study?useSSL=false&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
+    username: root
+    password: root
+    hikari:
+      auto-commit: false
+      connection-test-query: SELECT 1
+      minimum-idle: 10
+      maximum-pool-size: 50
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: false
+        order_inserts: true
+        jdbc:
+          batch_size: 100
+    open-in-view: false
+    defer-datasource-initialization: true
+    show-sql: true
+  sql:
+    init:
+      mode: always
