@@ -40,5 +40,6 @@ out/
 .kotlin
 
 ### Property ###
-**/**/application-local.yml
+**/application-local.yml
 **/**/*.jar
+**/**/*.properties
